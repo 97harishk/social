@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/sign-up.css" >
+<div id="sign_up">
+    <form method="POST" action="/user/create">
+       <h1>Sign-Up!</h1>
+      <div class="form-control">
+          <i class="fa fa-user" aria-hidden="true"></i> <input type="text" name="name" placeholder="Enter name.." required />
+      </div>
+      <div class="form-control">
+          <i class="fa fa-envelope" aria-hidden="true"></i>  <input type="text" name="email" placeholder="Enter email.." required />
+      </div>
+      <div class="form-control">
+          <i class="fa fa-lock"></i> <input type="password" name="password" placeholder="Type password..." required />
+      </div>
+      <div class="form-control">
+          <i class="fa fa-lock"></i>  <input type="password" name="confirm_password" placeholder="Re type password..." required />
+      </div>
+      <div class="form-submit">
+          <button type="submit" name="submit" >SignUp</button>
+      </div>
+      <h3><a href='/user/sign-in/'>Sign-IN Here</a></h3>
+    </form>
+</div>
+         

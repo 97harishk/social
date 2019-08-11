@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/chat.css">
+<h1>Hello Social App</h1>
+
+<section class="container">
+               
+        <div class="all-posts">
+                        <form id="new-post-form" action="/post/create" method="POST">
+                                <textarea name="content" placeholder="Type here.." required/></textarea>
+                                <button type="submit" name="submit">Post</button>
+                        </form>
+                        <div id="post-list-container">
+                                <ul>
+                                        <% for(post of posts){ %>
+                                                <%- include('_post') -%>
+                                        <%  } %>
+                                </ul>
+                        </div>
+        </div>
+       
+        <div class="all-users">
+                <ul id="users">
+                        <% for(u of all_user){%>
+                        <li>
+                        <div class="user-details">
+                                <div class="user-name">
+                                        <a href="/user/profile/<%= u._id %>"><h3><%= u.name %></h3></a>
+                                        <p><%= u.email %></p>
+                                </div>
+                                <div class="friend-button">
+                                        <a href="/friend/toggle/<%= u._id %>"><button>Add Friend</button></a>
+                                </div>
+                        </div>
+                                
+                        </li>
+                        <%} %>
+                </ul>
+        </div>
+        <div id="chat-box">
+                <div class="chat-head">
+                        <h4>Harish Kumar</h4>
+                </div>
+                <div class="chat-content">
+                        <div id="to">
+                                <h3>hii</h3>
+                        </div>
+                        <div id="from">
+                                <h3>hii</h3>
+                                <h3>how Are u??</h3>
+                        </div>
+                </div>
+                <div class="form-control">
+                        <div class="form-input">
+                                <input type="text" placeholder="Write Something..">
+                        </div>
+                        <div class="form-button">
+                                <button><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                </div>
+                
+        </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+<% if(locals.user) { %>
+<script>
+new ChatEngine('chat-box','<%= locals.user._id %>')
+</script>
+<% } %>

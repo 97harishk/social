@@ -1,0 +1,52 @@
+#sign_up{
+    position: relative;
+    width: 40%;
+    left: 30%;
+    border: 2px solid lightgray;
+    top: 5rem;
+}
+#sign_up h1{
+    color: grey;
+    text-align: center;
+}
+.form-control{
+    position: relative;
+    width: 60%;
+    left: 20%;
+    border-bottom: 2px solid #800000;
+    margin-bottom: 25px;
+    color: #800000;
+}
+
+.form-control input{
+    background-color: transparent;
+    width: 90%;
+    outline: none;
+    border: none;
+    font-weight: bold;
+}
+.form-submit{
+    position: relative;
+    width: 40%;
+    height: 2rem;
+    left: 30%;
+    background-color:   rgba(123,0,0,1);    
+    border-radius: 5px;
+    text-align: center;
+}
+.form-submit:hover{
+    background-color: rgba(123,0,0,0.6);
+    
+    
+}
+.form-submit button{
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    padding: auto;
+    color: white;
+    cursor: pointer;
+}

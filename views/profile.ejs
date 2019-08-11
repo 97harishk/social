@@ -1,0 +1,18 @@
+
+            <h3><a href='/user/sign-up/'>Sign-UP Here</a></h3>
+            <h3><a href='/user/sign-in/'>Sign-IN Here</a></h3>
+            <h3><a href='/user/log-out/'>Logout</a></h3>
+        <h1>Hello Social App</h1>
+       <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="200px" height="200px" >
+        <h3><%= profile_user.name %></h3>
+        <h3><%= profile_user.email %></h3>
+        <% if(user.id == profile_user.id ) { %> 
+        <div>
+            <form method="POST" action="/user/update/<%= user.id %>" enctype="multipart/form-data" >
+            <input type="text" name="name" value="<%= profile_user.name %>" required/>
+            <input type="email" name="email" value="<%= profile_user.email %>" required/>
+            <input type="file" name="avatar"  required/>
+            <input type="submit" name="update" />
+            </form>
+        </div>
+        <% } %>

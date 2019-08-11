@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+}
+.container{
+    width: 80%;
+    display: flex;
+    position: relative;
+    left: 10%;
+}
+
+.all-posts{
+    width: 50%;
+}
+.all-users{
+    width: 50%;
+    border-left: 1px solid grey;
+}
+.all-users ul li{
+    list-style: none;
+}
+.user-details{
+display: flex;
+}
+.user-details .user-name{
+    position: relative;
+    width: 60%;
+}
+.user-details .friend-button{
+    position: relative;
+    width: 40%;
+}

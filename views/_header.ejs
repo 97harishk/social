@@ -1,0 +1,14 @@
+
+<div id="header">
+    <div class="name">
+            <h1><a href="/">SOCIAL</a></h1>
+    </div>
+    <div class="links">
+            <h3><% if(locals.user){ %>
+                <a href="/user/profile/<%= locals.user.id %>">Profile</a> 
+                <a href="/user/log-out">Logout</a>
+                <% }else { %>
+                        <a href="/user/sign-in">Login </a>
+                        <a href="/user/sign-up">SignUP</a><% } %></h3>
+    </div>
+</div>

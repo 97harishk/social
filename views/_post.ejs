@@ -1,0 +1,32 @@
+<li id="<%= post._id %>">
+        <a class="delete-post-button" href="/post/destroy/<%= post.id %>">X </a><%= post.content %>
+</br>
+<small>
+        <%= post.user.name %>
+</small>
+</br>
+<small>
+        <% if(locals.user){ %>
+                <a class="toggle-like-button"  data-likes="<%= post.likes.length %>" href="/like/toggle?id=<%= post._id %>&type=Post"><%= post.likes.length %>Likes </a>
+   <%     }%>
+</small>
+<form method="POST" action="/comment/create">
+        <input type="text" name="content" placeholder="comment" required />
+        <input type="hidden" name="post" value="<%= post.id %>" required />
+        <input type="submit" name="submit" value="comment">
+</form>
+<div class="post-comments-list">
+        <ul id="post-comments-<%= post._id %>">
+                <% for(comment of post.comments){%>
+                    <%- include('_comment') -%>
+                <%} %>
+        </ul>
+</div>
+</li>
+<script src="/js/toggle_likes.js" ></script>
+<script>
+$('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLikes(self);
+})
+</script>

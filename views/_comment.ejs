@@ -1,0 +1,12 @@
+
+
+                <p>
+                        <a href="/comment/destroy/<%= comment.id %>">X</a> <%= comment.content %>
+                         <br>
+                         <small>
+                             <a class="toggle-like-button"  data-likes="<%= comment.likes.length %>" href="like/toggle?id=<%= comment._id %>&type=Comment"> <%= comment.likes.length %>Likes</a>
+                        </small>
+                         <small>
+                                 <%= comment.user.name %>
+                         </small>
+                 </p>
