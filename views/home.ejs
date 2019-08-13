@@ -38,23 +38,26 @@
         </div>
         <div id="chat-box">
                 <div class="chat-head">
-                        <h4>Harish Kumar</h4>
+                        <h4><%= locals.user.name %></h4>
                 </div>
                 <div class="chat-content">
-                        <div id="to">
-                                <h3>hii</h3>
-                        </div>
-                        <div id="from">
-                                <h3>hii</h3>
-                                <h3>how Are u??</h3>
-                        </div>
+                        <ul id="chat-message-list">
+                                <li class="other-message">
+                                        <h3>hii</h3>
+                                </li>
+                                <li class="self-message">
+                                        <h3>how Are u??</h3>
+                                </li>
+
+                        </ul>
+                        
                 </div>
                 <div class="form-control">
                         <div class="form-input">
-                                <input type="text" placeholder="Write Something..">
+                                <input type="text" placeholder="Write Something.." id="chat-message-input">
                         </div>
                         <div class="form-button">
-                                <button><i class="fas fa-paper-plane"></i></button>
+                                <button id="send-message"><i class="fas fa-paper-plane"></i></button>
                         </div>
                 </div>
                 
@@ -65,6 +68,6 @@
 <script src="/js/chat_engine.js"></script>
 <% if(locals.user) { %>
 <script>
-new ChatEngine('chat-box','<%= locals.user._id %>')
+new ChatEngine('chat-box','<%= locals.user.email %>')
 </script>
 <% } %>
